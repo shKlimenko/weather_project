@@ -75,30 +75,9 @@ def main():
     weather_info = extract_weather_info(data)
     
     print("Сохраняем в базу данных...")
-    #save_to_postgres(weather_info)
+    save_to_postgres(weather_info)
     
     print("✅ Данные успешно получены и сохранены!")
-
-    '''print(f'Город {weather_info[1]} Температура {weather_info[3]} ощущается как {weather_info[4]}')
-    print(f'Давление {weather_info[5]} скорость ветра {weather_info[7]} облачность {weather_info[8]}')
-    print(f'{weather_info[9]}')
-    print(f'{extract_weather_info(weather_info)}')'''
-
-    try:
-        print("Дата и время:", weather_info[0])
-        print("Город:", weather_info[1])
-        print("Страна:", weather_info[2])
-        print("Температура:", weather_info[3])
-        print("Ощущается как:", weather_info[4])
-        print("Давление:", weather_info[5])
-        print("Влажность:", weather_info[6])
-        print("Скорость ветра:", weather_info[7])
-        print("Облачность:", weather_info[8])
-        print("Описание погоды:", weather_info[9])
-    except KeyError as e:
-        print(f"Ошибка: отсутствует ключ {e} в данных о погоде.")
-    except Exception as e:
-        print(f"Произошла ошибка: {e}")
 
 if __name__ == "__main__":
     main()
