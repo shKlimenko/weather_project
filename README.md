@@ -31,8 +31,8 @@
 
 ## 📦 Архитектура проекта
 [OpenWeatherMap API] → [Python Script + Pandas] → [PostgreSQL] → [Apache Superset] <br>
-<pre>                         ↑
-                         └── Управление через Apache Airflow (раз в день)</pre>
+&emsp;&emsp;&emsp;&emsp;&emsp;↑<br>
+&emsp;&emsp;&emsp;&emsp;&emsp;└── Управление через Apache Airflow (раз в день)
 
 ---
 
@@ -48,8 +48,8 @@
 ## 📬 Связь
 Если есть вопросы или идеи — пиши мне:
 
-📧 Email: klimеnkо161@gmаil.соm
-💼 LinkedIn: https://www.linkedin.com/in/selectbegemot/
+📧 Email: klimеnkо161@gmаil.соm<br>
+💼 LinkedIn: https://www.linkedin.com/in/selectbegemot/<br>
 
 ## ❤️ Спасибо за интерес к проекту!
 Удачных экспериментов с данными о погоде! ☀️🌧️
