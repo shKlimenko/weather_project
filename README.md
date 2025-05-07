@@ -31,8 +31,8 @@
 
 ## 📦 Архитектура проекта
 [OpenWeatherMap API] → [Python Script + Pandas] → [PostgreSQL] → [Apache Superset] <br>
-                        ↑<br>
-                        └── Управление через Apache Airflow (раз в день)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↑<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Управление через Apache Airflow (раз в день)
 
 ---
 
