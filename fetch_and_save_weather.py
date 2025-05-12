@@ -2,7 +2,7 @@ import requests
 import psycopg2
 import os
 from dotenv import load_dotenv
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Загружаем переменные окружения из .env
 load_dotenv()
@@ -32,8 +32,8 @@ def get_weather_data():
 
 # === 3. Функция извлечения данных из JSON ===
 def extract_weather_info(data):
-    city = data["name"]
-    country = data["sys"]["country"]
+    #city = data["name"]
+    #country = data["sys"]["country"]
     temp = data["main"]["temp"]
     feels_like = data["main"]["feels_like"]
     pressure = data["main"]["pressure"]
@@ -41,10 +41,10 @@ def extract_weather_info(data):
     wind_speed = data["wind"]["speed"]
     cloudiness = data["clouds"]["all"]
     weather_description = data["weather"][0]["description"]
-    dt = datetime.fromtimestamp(data["dt"])
+    dt = datetime.fromtimestamp(data["dt"]) + timedelta(hours=3)
 
     return (
-        dt, city, country, temp, feels_like,
+        dt, temp, feels_like,
         pressure, humidity, wind_speed, cloudiness, weather_description
     )
 
@@ -54,10 +54,10 @@ def save_to_postgres(data):
     cursor = conn.cursor()
 
     insert_query = """
-    INSERT INTO weather_data (
-        timestamp, city, country, temperature, feels_like, pressure,
-        humidity, wind_speed, cloudiness, description
-    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+    INSERT INTO weather_data_table (
+        dt_timestamp, temperature, feels_like, pressure,
+        humidity, wind_speed, cloudiness, weather_description
+    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
     """
 
     cursor.execute(insert_query, data)
