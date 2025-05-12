@@ -1,6 +1,6 @@
 <h1 align="center">🌤️ Weather Data Pipeline with Airflow, Pandas & Apache Superset</h1>
 
-  Проект собирает данные о погоде из <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap API</a>, обрабатывает их с помощью <strong>Pandas</strong>, сохраняет в БД через <strong>Airflow</strong> по расписанию (раз в день) и визуализирует в <strong>Apache Superset</strong>.
+  Проект собирает данные о погоде из <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap API</a>, обрабатывает их, сохраняет в БД через <strong>Airflow</strong> по расписанию (раз в день) и визуализирует в <strong>Apache Superset</strong>.
 
 
 ---
